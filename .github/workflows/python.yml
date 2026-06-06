@@ -1,0 +1,21 @@
+name: CI/CD PIPELINE
+
+on
+  push:
+    branches:
+      - main
+
+pull_request:
+  branches:
+    - main
+
+jobs
+  print_the_file
+    run-on: ubuntu-latest
+
+    steps:
+      - name: Git Clone
+      - uses: actions/checkout@v3
+      
+      - name: Print the file
+      - run: echo "Hello World"
